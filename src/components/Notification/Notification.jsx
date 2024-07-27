@@ -1,4 +1,5 @@
 import css from "./Notification.module.css";
+import PropTypes from "prop-types";
 
 const Notification = () => {
   return (
@@ -7,5 +8,5 @@ const Notification = () => {
     </div>
   );
 };
-
+Notification.propTypes = PropTypes.string.isRequired;
 export default Notification;

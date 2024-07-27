@@ -1,3 +1,4 @@
+import Section from "./components/Section/Section";
 import Description from "./components/Description/Description";
 import Options from "./components/Options/Options";
 import Notification from "./components/Notification/Notification";
@@ -28,20 +29,22 @@ const App = () => {
 
   return (
     <>
-      <Description />
-      <Options
-        updateFeedback={updateFeedback}
-        totalFeedback={totalFeedback}
-        resetFeedback={resetFeedback}
-      />
-      {totalFeedback !== 0 && (
-        <Feedback
-          feedback={feedback}
+      <Section>
+        <Description />
+        <Options
+          updateFeedback={updateFeedback}
           totalFeedback={totalFeedback}
-          posFeedback={posFeedback}
+          resetFeedback={resetFeedback}
         />
-      )}
-      {totalFeedback === 0 && <Notification />}
+        {totalFeedback !== 0 && (
+          <Feedback
+            feedback={feedback}
+            totalFeedback={totalFeedback}
+            posFeedback={posFeedback}
+          />
+        )}
+        {totalFeedback === 0 && <Notification />}
+      </Section>
     </>
   );
 };
